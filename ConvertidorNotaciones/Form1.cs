@@ -71,10 +71,10 @@ namespace ConvertidorNotaciones
 						pila.Push(Convert.ToChar(lista[i]));
 						if(inicios>0 && cierres>0 )
 						{
-							char p = pila.Pop();
-							while (p != ')')
+							char p;
+							while (pila.Peek() != ')')
 							{
-								if (p == '(')
+								if (pila.Peek() == '(')
 								{
 									p = pila.Pop();//Saca el (
 								}
@@ -209,10 +209,22 @@ namespace ConvertidorNotaciones
 						pila.Push(Convert.ToChar(lista[i]));
 						if (inicios > 0 && cierres > 0)
 						{
+							char p;
+							while (pila.Peek() != '(')
+							{
+								if (pila.Peek() == ')')
+								{
+									p = pila.Pop();//Saca el )
+								}
+								else
+								{
+									p = pila.Pop(); // saca el elemento
+									salida += p + " ";
+								}
+
+							}
 							pila.Pop();//Saca el (
-							char c = pila.Pop(); // saca el elemento
-							pila.Pop();//Saca el )
-							salida += c + " ";
+
 							inicios--; cierres--;
 						}
 					}
