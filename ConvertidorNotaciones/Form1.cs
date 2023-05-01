@@ -71,10 +71,22 @@ namespace ConvertidorNotaciones
 						pila.Push(Convert.ToChar(lista[i]));
 						if(inicios>0 && cierres>0 )
 						{
-							pila.Pop();//Saca el (
-							char c = pila.Pop(); // saca el elemento
+							char p = pila.Pop();
+							while (p != ')')
+							{
+								if (p == '(')
+								{
+									p = pila.Pop();//Saca el (
+								}
+								else
+								{
+									p = pila.Pop(); // saca el elemento
+									salida += p + " ";
+								}
+
+							}
 							pila.Pop();//Saca el )
-							salida += c + " ";
+							
 							inicios--;cierres--;
 						}
 					}
@@ -82,7 +94,7 @@ namespace ConvertidorNotaciones
 					// si es mutiplicacion o division P3
 					if(EsIgual(letra,'*','/'))
 					{
-						if(EsIgual(pila.Peek(),'.','^', '\u221A'))
+						if(pila.Count > 0 && EsIgual(pila.Peek(),'.','^', '\u221A'))
 						{
 							salida += pila.Pop() + " ";
 							pila.Push(letra);
@@ -139,7 +151,15 @@ namespace ConvertidorNotaciones
 				{
 					while (pila.Count > 0)
 					{
-						salida += pila.Pop() + " ";
+						char x = pila.Pop();
+						if (x == '(' || x == ')')
+						{
+							
+						}else
+						{
+							salida += x + " ";
+						}
+						
 					}
 
 				}
@@ -200,7 +220,7 @@ namespace ConvertidorNotaciones
 					// si es mutiplicacion o division P3
 					if (EsIgual(letra, '*', '/'))
 					{
-						if (EsIgual(pila.Peek(), '.', '^', '\u221A'))
+						if (pila.Count > 0 && EsIgual(pila.Peek(), '.', '^', '\u221A'))
 						{
 							salida += pila.Pop() + " ";
 							pila.Push(letra);
@@ -259,7 +279,15 @@ namespace ConvertidorNotaciones
 				{
 					while (pila.Count > 0)
 					{
-						salida += pila.Pop() + " ";
+						char x = pila.Pop();
+						if (x == '(' || x == ')')
+						{
+
+						}
+						else
+						{
+							salida += x + " ";
+						}
 					}
 
 				}
@@ -430,6 +458,14 @@ namespace ConvertidorNotaciones
 					break;
 				case 1:
 					txtInfija.Text = "X = Y + 10";
+					x++;
+					break;
+				case 2:
+					txtInfija.Text = "( A * B * D ) * C ";
+					x++;
+					break;
+				case 3:
+					txtInfija.Text = "( A * B + D ) * C ";
 					x++;
 					break;
 				default:
