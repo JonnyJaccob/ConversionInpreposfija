@@ -1,0 +1,10 @@
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\bin\Debug\ConvertidorNotaciones.exe.config
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\bin\Debug\ConvertidorNotaciones.exe
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\bin\Debug\ConvertidorNotaciones.pdb
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.csprojAssemblyReference.cache
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.Form1.resources
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.Properties.Resources.resources
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.csproj.GenerateResource.cache
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.csproj.CoreCompileInputs.cache
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.exe
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.pdb
