@@ -25,7 +25,7 @@ namespace ConvertidorNotaciones
 			if (string.IsNullOrEmpty(texto))
 			{
 				MessageBox.Show("El texto está vacío o es nulo");
-			}else
+			} else
 			{
 				ConversionPrefija(texto);
 				ConversionPosfija(texto);
@@ -39,37 +39,37 @@ namespace ConvertidorNotaciones
 			Stack<char> pila = new Stack<char>();
 			int inicios = 0;
 			int cierres = 0;
-			for (int i = lista.Length-1; i >= 0; i--)
+			for (int i = lista.Length - 1; i >= 0; i--)
 			{
-				if(lista[i]==" ")
+				if (lista[i] == " ")
 				{
 
-				}else
+				} else
 				// si es un signo de exponente o raiz cuadrada P2
-				if(EsIgual(lista[i] , "^","**", "\u221A") )
+				if (EsIgual(lista[i], "^", "**", "\u221A"))
 				{
-					if(lista[i]=="**")
+					if (lista[i] == "**")
 					{
 						pila.Push('.');
-					}else
-					pila.Push(Convert.ToChar(lista[i]));
+					} else
+						pila.Push(Convert.ToChar(lista[i]));
 				}
 				else
-				if(EsIgualSigno(lista[i]) || lista[i] == "(" || lista[i]==")")
+				if (EsIgualSigno(lista[i]) || lista[i] == "(" || lista[i] == ")")
 				{
 					char letra = Convert.ToChar(lista[i]);
 					//Si es parentesis P1
-					if (EsIgual(letra,'(',')'))
+					if (EsIgual(letra, '(', ')'))
 					{
-						if(letra == ')')
+						if (letra == ')')
 						{
 							inicios++;
-						}else
+						} else
 						{
 							cierres++;
 						}
 						pila.Push(Convert.ToChar(lista[i]));
-						if(inicios>0 && cierres>0 )
+						if (inicios > 0 && cierres > 0)
 						{
 							char p;
 							while (pila.Peek() != ')')
@@ -86,15 +86,15 @@ namespace ConvertidorNotaciones
 
 							}
 							pila.Pop();//Saca el )
-							
-							inicios--;cierres--;
+
+							inicios--; cierres--;
 						}
 					}
-					else 
+					else
 					// si es mutiplicacion o division P3
-					if(EsIgual(letra,'*','/'))
+					if (EsIgual(letra, '*', '/'))
 					{
-						if(pila.Count > 0 && EsIgual(pila.Peek(),'.','^', '\u221A'))
+						if (pila.Count > 0 && EsIgual(pila.Peek(), '.', '^', '\u221A'))
 						{
 							salida += pila.Pop() + " ";
 							pila.Push(letra);
@@ -103,11 +103,11 @@ namespace ConvertidorNotaciones
 						{
 							pila.Push(letra);
 						}
-					}else
+					} else
 					//si es suma o resta P4
-					if(EsIgual(letra, '+', '-'))
+					if (EsIgual(letra, '+', '-'))
 					{
-						if (pila.Count > 0 && EsIgual(pila.Peek(), '.', '^', '\u221A','*','/'))
+						if (pila.Count > 0 && EsIgual(pila.Peek(), '.', '^', '\u221A', '*', '/'))
 						{
 							salida += pila.Pop() + " ";
 							pila.Push(letra);
@@ -121,7 +121,7 @@ namespace ConvertidorNotaciones
 					//si es suma o resta P5
 					if (letra == '=')
 					{
-						if (pila.Count > 0 && EsIgual(pila.Peek(), '.', '^', '\u221A', '*', '/','+','-'))
+						if (pila.Count > 0 && EsIgual(pila.Peek(), '.', '^', '\u221A', '*', '/', '+', '-'))
 						{
 							salida += pila.Pop() + " ";
 							pila.Push(letra);
@@ -135,31 +135,31 @@ namespace ConvertidorNotaciones
 					{
 						//algo fuera de lo comun, no hacer nada
 					}
-				}else
+				} else
 				{
 					string sinEspacios = "";
 					foreach (char item in lista[i])
 					{
-						if(item != ' ')
+						if (item != ' ')
 						{
 							sinEspacios += item;
 						}
 					}
 					salida += sinEspacios + " ";
 				}
-				if(i == 0)
+				if (i == 0)
 				{
 					while (pila.Count > 0)
 					{
 						char x = pila.Pop();
 						if (x == '(' || x == ')')
 						{
-							
-						}else
+
+						} else
 						{
 							salida += x + " ";
 						}
-						
+
 					}
 
 				}
@@ -287,7 +287,7 @@ namespace ConvertidorNotaciones
 					}
 					salida += sinEspacios + " ";
 				}
-				if (i == lista.Length-1)
+				if (i == lista.Length - 1)
 				{
 					while (pila.Count > 0)
 					{
@@ -311,11 +311,11 @@ namespace ConvertidorNotaciones
 		{
 			Application.Exit();
 		}
-		private bool EsIgualSigno(params string[] coleccion )
+		private bool EsIgualSigno(params string[] coleccion)
 		{
 			foreach (string signo in coleccion)
 			{
-				if (signo == '^' + "" || signo == '/' + "" || signo == '*'+"" || signo == '-'+"" || signo == '+'+"" || signo == '='+"")
+				if (signo == '^' + "" || signo == '/' + "" || signo == '*' + "" || signo == '-' + "" || signo == '+' + "" || signo == '=' + "")
 				{
 					return true;
 				}
@@ -344,7 +344,7 @@ namespace ConvertidorNotaciones
 		{
 			foreach (char signo in coleccion)
 			{
-				if (signo == '^'  || signo == '/' || signo == '*' || signo == '-' || signo == '+' || signo == '=')
+				if (signo == '^' || signo == '/' || signo == '*' || signo == '-' || signo == '+' || signo == '=')
 				{
 					return true;
 				}
@@ -356,7 +356,7 @@ namespace ConvertidorNotaciones
 			char[] list = cadena.ToCharArray();
 			foreach (char carac in list)
 			{
-				if(EsIgualSigno(carac))
+				if (EsIgualSigno(carac))
 				{
 
 				}
@@ -492,6 +492,194 @@ namespace ConvertidorNotaciones
 			txtPosfija.Text = "";
 			txtInfija.Text = "";
 			txtPrefija.Text = "";
+		}
+		//cambiar tamaño de la forma cuando crece o reduce su tamaño, los controles cambian
+		private void Form1_Resize(object sender, EventArgs e)
+		{
+			int altura = this.Size.Height;
+			int anchura = this.Size.Width;
+			if (tamañoOriginal.Height == altura && tamañoOriginal.Width == anchura)
+			{
+				//Textbox
+				txtInfija.Size = tamañoOriginaltxtInfija;
+				txtInfija.Location = posicionOriginaltxtInfija;
+				txtPosfija.Size = tamañoOriginaltxtPosfija;
+				txtPosfija.Location = posicionOriginaltxtPosfija;
+				txtPrefija.Size = tamañoOriginaltxtPrefija;
+				txtPrefija.Location = posicionOriginaltxtPrefija;
+
+				//Botones
+				btnConvertir.Size = tamañoOriginalbtnConvertir;
+				btnConvertir.Location = posicionOriginalbtnConvertir;
+				btnSuma.Size = tamañoOriginalbtnSuma;
+				btnSuma.Location = posicionOriginalbtnSuma;
+				btnResta.Size = tamañoOriginalbtnResta;
+				btnResta.Location = posicionOriginalbtnResta;
+				btnMulti.Size = tamañoOriginalbtnMulti;
+				btnMulti.Location = posicionOriginalbtnMulti;
+				btnDiv.Size = tamañoOriginalbtnDiv;
+				btnDiv.Location = posicionOriginalbtnDiv;
+				btnDExp.Size = tamañoOriginalbtnDExp;
+				btnDExp.Location = posicionOriginalbtnDExp;
+				btnExp.Size = tamañoOriginalbtnExp;
+				btnExp.Location = posicionOriginalbtnExp;
+				btnRaiz.Size = tamañoOriginalbtnRaiz;
+				btnRaiz.Location = posicionOriginalbtnRaiz;
+				btnInicio.Size = tamañoOriginalbtnInicio;
+				btnInicio.Location = posicionOriginalbtnInicio;
+				btnCierre.Size = tamañoOriginalbtnCierre;
+				btnCierre.Location = posicionOriginalbtnCierre;
+
+				btnMistery.Size = tamañoOriginalbtnMistery;
+				btnMistery.Location = posicionOriginalbtnMistery;
+				btnAjustar.Size = tamañoOriginalbtnAjustar;
+				btnLimpiar.Size = tamañoOriginalbtnLimpiar;
+				btnSalir.Size = tamañoOriginalbtnSalir;
+			}
+			else if(anchura > 50 && anchura < 90)
+			{
+				//Cambiar las posiciones
+			}
+
+		}
+
+		static Size tamañoOriginal;
+		static Size tamañoMinimoVentana = new Size(136, 39); 
+
+		static Size tamañoOriginaltxtInfija;
+		static Size tamañoOriginaltxtPosfija;
+		static Size tamañoOriginaltxtPrefija;
+		static Size tamañoOriginalbtnConvertir;
+		static Size tamañoOriginalbtnSuma;
+		static Size tamañoOriginalbtnResta;
+		static Size tamañoOriginalbtnMulti;
+		static Size tamañoOriginalbtnDiv;
+		static Size tamañoOriginalbtnDExp;
+		static Size tamañoOriginalbtnExp;
+		static Size tamañoOriginalbtnRaiz;
+		static Size tamañoOriginalbtnInicio;
+		static Size tamañoOriginalbtnCierre;
+
+		static Size tamañoOriginalbtnMistery;
+		static Size tamañoOriginalbtnAjustar;
+		static Size tamañoOriginalbtnLimpiar;
+		static Size tamañoOriginalbtnSalir;
+
+		static Point posicionOriginaltxtInfija;
+		static Point posicionOriginaltxtPosfija;
+		static Point posicionOriginaltxtPrefija;
+		static Point posicionOriginalbtnConvertir;
+		static Point posicionOriginalbtnSuma;
+		static Point posicionOriginalbtnResta;
+		static Point posicionOriginalbtnMulti;
+		static Point posicionOriginalbtnDiv;
+		static Point posicionOriginalbtnDExp;
+		static Point posicionOriginalbtnExp;
+		static Point posicionOriginalbtnRaiz;
+		static Point posicionOriginalbtnInicio;
+		static Point posicionOriginalbtnCierre;
+
+		static Point posicionOriginalbtnMistery;
+		static Point posicionOriginalbtnAjustar;
+		static Point posicionOriginalbtnLimpiar;
+		static Point posicionOriginalbtnSalir;
+
+		//Necesitas la extension (nugget) System.ValueTuple
+		private List<(Control control, Point originalLocation, Size originalSize)> _originalPositions;
+
+		private void Form1_Load(object sender, EventArgs e)
+		{
+			tamañoOriginal = this.Size;
+			tamañoOriginaltxtInfija = txtInfija.Size;
+			tamañoOriginaltxtPosfija = txtPosfija.Size;
+			tamañoOriginaltxtPrefija = txtPrefija.Size;
+			tamañoOriginalbtnConvertir = btnConvertir.Size;
+			tamañoOriginalbtnSuma = btnSuma.Size;
+			tamañoOriginalbtnResta = btnResta.Size; ;
+			tamañoOriginalbtnMulti = btnMulti.Size;
+			tamañoOriginalbtnDiv = btnDiv.Size;
+			tamañoOriginalbtnDExp = btnDExp.Size;
+			tamañoOriginalbtnExp = btnExp.Size;
+			tamañoOriginalbtnRaiz = btnRaiz.Size;
+			tamañoOriginalbtnInicio = btnInicio.Size;
+			tamañoOriginalbtnCierre = btnCierre.Size;
+
+			tamañoOriginalbtnMistery = btnMistery.Size;
+			tamañoOriginalbtnAjustar = btnAjustar.Size;
+			tamañoOriginalbtnLimpiar = btnLimpiar.Size;
+			tamañoOriginalbtnSalir = btnSalir.Size;
+
+			posicionOriginaltxtInfija = txtInfija.Location;
+			posicionOriginaltxtPosfija = txtPosfija.Location;
+			posicionOriginaltxtPrefija = txtPrefija.Location;
+			posicionOriginalbtnConvertir = btnConvertir.Location;
+			posicionOriginalbtnSuma = btnSuma.Location;
+			posicionOriginalbtnResta = btnResta.Location;
+			posicionOriginalbtnMulti = btnMulti.Location;
+			posicionOriginalbtnDiv = btnDiv.Location;
+			posicionOriginalbtnDExp = btnDExp.Location;
+			posicionOriginalbtnExp = btnExp.Location;
+			posicionOriginalbtnRaiz = btnRaiz.Location;
+			posicionOriginalbtnInicio = btnInicio.Location;
+			posicionOriginalbtnCierre = btnCierre.Location;
+
+			posicionOriginalbtnMistery = btnMistery.Location;
+			posicionOriginalbtnAjustar = btnAjustar.Location;
+			posicionOriginalbtnLimpiar = btnLimpiar.Location;
+			posicionOriginalbtnSalir = btnSalir.Location;
+			// Guardar las posiciones y tamaños originales de los controles
+			_originalPositions = new List<(Control control, Point originalLocation, Size originalSize)>
+			{
+				(txtInfija, txtInfija.Location, txtInfija.Size),
+				(txtPosfija, txtPosfija.Location, txtPosfija.Size),
+				(txtPrefija, txtPrefija.Location, txtPrefija.Size),
+				(btnConvertir, btnConvertir.Location, btnConvertir.Size),
+				(btnSuma, btnSuma.Location, btnSuma.Size),
+				(btnResta, btnResta.Location, btnResta.Size),
+				(btnMulti, btnMulti.Location, btnMulti.Size),
+				(btnDiv, btnDiv.Location, btnDiv.Size),
+				(btnDExp, btnDExp.Location, btnDExp.Size),
+				(btnExp, btnExp.Location, btnExp.Size),
+				(btnRaiz, btnRaiz.Location, btnRaiz.Size),
+				(btnInicio, btnInicio.Location, btnInicio.Size),
+				(btnCierre, btnCierre.Location, btnCierre.Size),
+				(btnMistery, btnMistery.Location, btnMistery.Size),
+				(btnAjustar, btnAjustar.Location, btnAjustar.Size),
+				(btnLimpiar, btnLimpiar.Location, btnLimpiar.Size),
+				(btnSalir, btnSalir.Location, btnSalir.Size)
+			};
+
+			// Ajustar la posición y el tamaño de los controles en la primera ejecución
+			ResizeControls();
+		}
+		//Cuando cambie el tamaño de la ventana comprobara esto
+		private void ResizeControls()
+		{
+			int windowAltura = this.ClientSize.Height;
+			int windowAncho = this.ClientSize.Width;
+
+			foreach (var controlInfo in _originalPositions)
+			{
+				Control control = controlInfo.control;
+				Point originalLocation = controlInfo.originalLocation;
+				Size originalSize = controlInfo.originalSize;
+
+				// Calcular la nueva posición y el nuevo tamaño del control
+				int newX = originalLocation.X * windowAncho / tamañoOriginal.Width;
+				int newY = originalLocation.Y * windowAltura / tamañoOriginal.Height;
+				int newAltura = originalSize.Width * windowAncho / tamañoOriginal.Width;
+				int newAncho = originalSize.Height * windowAltura / tamañoOriginal.Height;
+
+				// Establecer la nueva posición y el nuevo tamaño del control
+				control.Location = new Point(newX, newY);
+				control.Size = new Size(newAltura, newAncho);
+			}
+		}
+
+
+		private void btnAjustar_Click(object sender, EventArgs e)
+		{
+			this.Size = tamañoOriginal;
 		}
 	}
 }

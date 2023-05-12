@@ -8,3 +8,6 @@ C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\Convertido
 C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.csproj.CoreCompileInputs.cache
 C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.exe
 C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.pdb
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\bin\Debug\System.ValueTuple.dll
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\bin\Debug\System.ValueTuple.xml
+C:\Users\jacco\OneDrive\Documentos\Repositorios\ConvertidorNotaciones\ConvertidorNotaciones\obj\Debug\ConvertidorNotaciones.csproj.CopyComplete

@@ -36,6 +36,10 @@
 			this.txtInfija = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btnLimpiar = new System.Windows.Forms.Button();
+			this.btnMistery = new System.Windows.Forms.Button();
+			this.btnCierre = new System.Windows.Forms.Button();
+			this.btnInicio = new System.Windows.Forms.Button();
 			this.btnExp = new System.Windows.Forms.Button();
 			this.btnRaiz = new System.Windows.Forms.Button();
 			this.btnDExp = new System.Windows.Forms.Button();
@@ -45,12 +49,13 @@
 			this.btnSuma = new System.Windows.Forms.Button();
 			this.btnSalir = new System.Windows.Forms.Button();
 			this.btnConvertir = new System.Windows.Forms.Button();
-			this.btnInicio = new System.Windows.Forms.Button();
-			this.btnCierre = new System.Windows.Forms.Button();
-			this.btnMistery = new System.Windows.Forms.Button();
-			this.btnLimpiar = new System.Windows.Forms.Button();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.panel2 = new System.Windows.Forms.Panel();
+			this.btnAjustar = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
+			this.panel1.SuspendLayout();
+			this.panel2.SuspendLayout();
 			this.SuspendLayout();
 			// 
 			// groupBox1
@@ -62,7 +67,7 @@
 			this.groupBox1.Controls.Add(this.label2);
 			this.groupBox1.Controls.Add(this.txtInfija);
 			this.groupBox1.Controls.Add(this.label1);
-			this.groupBox1.Location = new System.Drawing.Point(13, 13);
+			this.groupBox1.Location = new System.Drawing.Point(8, 3);
 			this.groupBox1.Name = "groupBox1";
 			this.groupBox1.Size = new System.Drawing.Size(882, 148);
 			this.groupBox1.TabIndex = 0;
@@ -120,6 +125,7 @@
 			// groupBox2
 			// 
 			this.groupBox2.BackColor = System.Drawing.SystemColors.ButtonShadow;
+			this.groupBox2.Controls.Add(this.btnAjustar);
 			this.groupBox2.Controls.Add(this.btnLimpiar);
 			this.groupBox2.Controls.Add(this.btnMistery);
 			this.groupBox2.Controls.Add(this.btnCierre);
@@ -133,12 +139,52 @@
 			this.groupBox2.Controls.Add(this.btnSuma);
 			this.groupBox2.Controls.Add(this.btnSalir);
 			this.groupBox2.Controls.Add(this.btnConvertir);
-			this.groupBox2.Location = new System.Drawing.Point(12, 167);
+			this.groupBox2.Location = new System.Drawing.Point(3, 5);
 			this.groupBox2.Name = "groupBox2";
 			this.groupBox2.Size = new System.Drawing.Size(882, 55);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Botones";
+			// 
+			// btnLimpiar
+			// 
+			this.btnLimpiar.Location = new System.Drawing.Point(720, 20);
+			this.btnLimpiar.Name = "btnLimpiar";
+			this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+			this.btnLimpiar.TabIndex = 12;
+			this.btnLimpiar.Text = "Limpiar";
+			this.btnLimpiar.UseVisualStyleBackColor = true;
+			this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+			// 
+			// btnMistery
+			// 
+			this.btnMistery.Location = new System.Drawing.Point(608, 19);
+			this.btnMistery.Name = "btnMistery";
+			this.btnMistery.Size = new System.Drawing.Size(25, 23);
+			this.btnMistery.TabIndex = 11;
+			this.btnMistery.Text = "?";
+			this.btnMistery.UseVisualStyleBackColor = true;
+			this.btnMistery.Click += new System.EventHandler(this.btnMistery_Click);
+			// 
+			// btnCierre
+			// 
+			this.btnCierre.Location = new System.Drawing.Point(371, 20);
+			this.btnCierre.Name = "btnCierre";
+			this.btnCierre.Size = new System.Drawing.Size(25, 23);
+			this.btnCierre.TabIndex = 10;
+			this.btnCierre.Text = ")";
+			this.btnCierre.UseVisualStyleBackColor = true;
+			this.btnCierre.Click += new System.EventHandler(this.btnCierre_Click);
+			// 
+			// btnInicio
+			// 
+			this.btnInicio.Location = new System.Drawing.Point(340, 20);
+			this.btnInicio.Name = "btnInicio";
+			this.btnInicio.Size = new System.Drawing.Size(25, 23);
+			this.btnInicio.TabIndex = 9;
+			this.btnInicio.Text = "(";
+			this.btnInicio.UseVisualStyleBackColor = true;
+			this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
 			// 
 			// btnExp
 			// 
@@ -230,59 +276,54 @@
 			this.btnConvertir.UseVisualStyleBackColor = true;
 			this.btnConvertir.Click += new System.EventHandler(this.btnConvertir_Click);
 			// 
-			// btnInicio
+			// panel1
 			// 
-			this.btnInicio.Location = new System.Drawing.Point(340, 20);
-			this.btnInicio.Name = "btnInicio";
-			this.btnInicio.Size = new System.Drawing.Size(25, 23);
-			this.btnInicio.TabIndex = 9;
-			this.btnInicio.Text = "(";
-			this.btnInicio.UseVisualStyleBackColor = true;
-			this.btnInicio.Click += new System.EventHandler(this.btnInicio_Click);
+			this.panel1.AutoScroll = true;
+			this.panel1.AutoSize = true;
+			this.panel1.Controls.Add(this.groupBox2);
+			this.panel1.Location = new System.Drawing.Point(4, 167);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(891, 69);
+			this.panel1.TabIndex = 2;
 			// 
-			// btnCierre
+			// panel2
 			// 
-			this.btnCierre.Location = new System.Drawing.Point(371, 20);
-			this.btnCierre.Name = "btnCierre";
-			this.btnCierre.Size = new System.Drawing.Size(25, 23);
-			this.btnCierre.TabIndex = 10;
-			this.btnCierre.Text = ")";
-			this.btnCierre.UseVisualStyleBackColor = true;
-			this.btnCierre.Click += new System.EventHandler(this.btnCierre_Click);
+			this.panel2.AutoScroll = true;
+			this.panel2.AutoSize = true;
+			this.panel2.Controls.Add(this.groupBox1);
+			this.panel2.Location = new System.Drawing.Point(4, 2);
+			this.panel2.Name = "panel2";
+			this.panel2.Size = new System.Drawing.Size(893, 159);
+			this.panel2.TabIndex = 3;
 			// 
-			// btnMistery
+			// btnAjustar
 			// 
-			this.btnMistery.Location = new System.Drawing.Point(689, 19);
-			this.btnMistery.Name = "btnMistery";
-			this.btnMistery.Size = new System.Drawing.Size(25, 23);
-			this.btnMistery.TabIndex = 11;
-			this.btnMistery.Text = "?";
-			this.btnMistery.UseVisualStyleBackColor = true;
-			this.btnMistery.Click += new System.EventHandler(this.btnMistery_Click);
-			// 
-			// btnLimpiar
-			// 
-			this.btnLimpiar.Location = new System.Drawing.Point(720, 20);
-			this.btnLimpiar.Name = "btnLimpiar";
-			this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
-			this.btnLimpiar.TabIndex = 12;
-			this.btnLimpiar.Text = "Limpiar";
-			this.btnLimpiar.UseVisualStyleBackColor = true;
-			this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+			this.btnAjustar.Location = new System.Drawing.Point(639, 19);
+			this.btnAjustar.Name = "btnAjustar";
+			this.btnAjustar.Size = new System.Drawing.Size(75, 23);
+			this.btnAjustar.TabIndex = 13;
+			this.btnAjustar.Text = "Ajustar";
+			this.btnAjustar.UseVisualStyleBackColor = true;
+			this.btnAjustar.Click += new System.EventHandler(this.btnAjustar_Click);
 			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(907, 239);
-			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.panel2);
+			this.Controls.Add(this.panel1);
 			this.Name = "Form1";
 			this.Text = "Conversiones";
+			this.Load += new System.EventHandler(this.Form1_Load);
+			this.Resize += new System.EventHandler(this.Form1_Resize);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
 			this.groupBox2.ResumeLayout(false);
+			this.panel1.ResumeLayout(false);
+			this.panel2.ResumeLayout(false);
 			this.ResumeLayout(false);
+			this.PerformLayout();
 
 		}
 
@@ -309,6 +350,9 @@
 		private System.Windows.Forms.Button btnCierre;
 		private System.Windows.Forms.Button btnInicio;
 		private System.Windows.Forms.Button btnLimpiar;
+		private System.Windows.Forms.Panel panel1;
+		private System.Windows.Forms.Panel panel2;
+		private System.Windows.Forms.Button btnAjustar;
 	}
 }
 
