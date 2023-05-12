@@ -36,6 +36,7 @@
 			this.txtInfija = new System.Windows.Forms.TextBox();
 			this.label1 = new System.Windows.Forms.Label();
 			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.btnAjustar = new System.Windows.Forms.Button();
 			this.btnLimpiar = new System.Windows.Forms.Button();
 			this.btnMistery = new System.Windows.Forms.Button();
 			this.btnCierre = new System.Windows.Forms.Button();
@@ -51,7 +52,6 @@
 			this.btnConvertir = new System.Windows.Forms.Button();
 			this.panel1 = new System.Windows.Forms.Panel();
 			this.panel2 = new System.Windows.Forms.Panel();
-			this.btnAjustar = new System.Windows.Forms.Button();
 			this.groupBox1.SuspendLayout();
 			this.groupBox2.SuspendLayout();
 			this.panel1.SuspendLayout();
@@ -139,12 +139,22 @@
 			this.groupBox2.Controls.Add(this.btnSuma);
 			this.groupBox2.Controls.Add(this.btnSalir);
 			this.groupBox2.Controls.Add(this.btnConvertir);
-			this.groupBox2.Location = new System.Drawing.Point(3, 5);
+			this.groupBox2.Location = new System.Drawing.Point(3, 11);
 			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(882, 55);
+			this.groupBox2.Size = new System.Drawing.Size(882, 72);
 			this.groupBox2.TabIndex = 1;
 			this.groupBox2.TabStop = false;
 			this.groupBox2.Text = "Botones";
+			// 
+			// btnAjustar
+			// 
+			this.btnAjustar.Location = new System.Drawing.Point(639, 19);
+			this.btnAjustar.Name = "btnAjustar";
+			this.btnAjustar.Size = new System.Drawing.Size(75, 23);
+			this.btnAjustar.TabIndex = 13;
+			this.btnAjustar.Text = "Ajustar";
+			this.btnAjustar.UseVisualStyleBackColor = true;
+			this.btnAjustar.Click += new System.EventHandler(this.btnAjustar_Click);
 			// 
 			// btnLimpiar
 			// 
@@ -283,7 +293,7 @@
 			this.panel1.Controls.Add(this.groupBox2);
 			this.panel1.Location = new System.Drawing.Point(4, 167);
 			this.panel1.Name = "panel1";
-			this.panel1.Size = new System.Drawing.Size(891, 69);
+			this.panel1.Size = new System.Drawing.Size(891, 86);
 			this.panel1.TabIndex = 2;
 			// 
 			// panel2
@@ -296,26 +306,17 @@
 			this.panel2.Size = new System.Drawing.Size(893, 159);
 			this.panel2.TabIndex = 3;
 			// 
-			// btnAjustar
-			// 
-			this.btnAjustar.Location = new System.Drawing.Point(639, 19);
-			this.btnAjustar.Name = "btnAjustar";
-			this.btnAjustar.Size = new System.Drawing.Size(75, 23);
-			this.btnAjustar.TabIndex = 13;
-			this.btnAjustar.Text = "Ajustar";
-			this.btnAjustar.UseVisualStyleBackColor = true;
-			this.btnAjustar.Click += new System.EventHandler(this.btnAjustar_Click);
-			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(907, 239);
+			this.ClientSize = new System.Drawing.Size(907, 262);
 			this.Controls.Add(this.panel2);
 			this.Controls.Add(this.panel1);
 			this.Name = "Form1";
 			this.Text = "Conversiones";
 			this.Load += new System.EventHandler(this.Form1_Load);
+			this.SizeChanged += new System.EventHandler(this.Form1_SizeChanged);
 			this.Resize += new System.EventHandler(this.Form1_Resize);
 			this.groupBox1.ResumeLayout(false);
 			this.groupBox1.PerformLayout();
